@@ -1,8 +1,10 @@
 package servlet.basic.domain.member;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class Member {
 
     private Long id;
