@@ -5,24 +5,27 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import realbasic.core.member.Grade;
 import realbasic.core.member.Member;
 import realbasic.core.member.MemberService;
+import realbasic.core.member.MemberServiceImpl;
+import realbasic.core.order.Order;
+import realbasic.core.order.OrderService;
+import realbasic.core.order.OrderServiceImpl;
 
-public class MemberApp {
+public class OrderApp {
 
     public static void main(String[] args) {
 //        AppConfig appConfig = new AppConfig();
 //        MemberService memberService = appConfig.memberService();
-//        MemberService memberService = new MemberServiceImpl();
+//        OrderService orderService = appConfig.orderService();
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+        OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
 
-        Member member = new Member(1L, "memberA", Grade.VIP);
+        Long memberId = 1L;
+        Member member = new Member(memberId, "memberA", Grade.VIP);
         memberService.join(member);
-
-        Member findMember = memberService.findMember(member.getId());
-        System.out.println("member = " + member.getName());
-        System.out.println("findMember = " + findMember.getName());
-
+        Order order = orderService.createOrder(memberId, "itemA", 10000);
+        System.out.println("order = " + order);
+        System.out.println("order.calculatePrice() = " + order.calculatePrice());
     }
-
 }
