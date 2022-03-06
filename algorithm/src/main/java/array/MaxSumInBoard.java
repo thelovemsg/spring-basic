@@ -13,7 +13,7 @@ public class MaxSumInBoard {
             for(int j=0; j<n; j++){
                 arr[i][j]=kb.nextInt();
             }
-        } 
+        }
         System.out.println(msb.solution(n, arr));
     }
 
