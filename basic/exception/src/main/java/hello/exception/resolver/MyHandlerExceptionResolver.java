@@ -22,7 +22,6 @@ public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
                 return new ModelAndView();
             }
-
         } catch (IOException e) {
             log.error("resolver ex", e);
         }
