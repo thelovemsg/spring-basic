@@ -35,6 +35,7 @@ public class ClassBoss {
         for(String temp : arr.split("")){
             map.put(temp, map.getOrDefault(temp,0)+1);
         }
+        //map에서 최대값만 찾으면 된다.
         System.out.println("map = " + map);
     }
 
