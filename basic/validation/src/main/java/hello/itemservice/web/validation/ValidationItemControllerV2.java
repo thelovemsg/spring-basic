@@ -103,6 +103,7 @@ public class ValidationItemControllerV2 {
         //검증 로직
         if (!StringUtils.hasText(item.getItemName())){
             bindingResult.addError(new FieldError("item", "itemName", item.getItemName(), false, null, null, "상품 이름은 필수입니다."));
+            bindingResult.rejectValue("itemName", "required");
         }
         if (item.getPrice() == null || item.getPrice()< 1000 || item.getPrice() > 100000000){
             bindingResult.addError(new FieldError("item", "price", item.getPrice(), false, null, null, "가격은 1,000 ~ 100,000,000까지 허용합니다. "));
@@ -208,7 +209,7 @@ public class ValidationItemControllerV2 {
             int resultPrice = item.getPrice() * item.getQuantity();
             if (resultPrice < 10000){
 //                errors.put("globalError", "가격 * 수량의 합은 10,000이상어야 합니다. 현재 값 = " + resultPrice);
-                bindingResult.addError(new ObjectError("item", new String[]{"totalPriceMin"}, new Object[]{10000,resultPrice}, null));
+//                bindingResult.addError(new ObjectError("item", new String[]{"totalPriceMin"}, new Object[]{10000,resultPrice}, null));
                 bindingResult.reject("totalPriceMin", new Object[]{10000, resultPrice}, null);
             }
         }
