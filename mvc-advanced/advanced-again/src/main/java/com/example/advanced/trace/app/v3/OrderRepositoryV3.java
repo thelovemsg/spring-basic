@@ -1,21 +1,21 @@
-package com.example.advanced.app.v1;
+package com.example.advanced.trace.app.v3;
 
 import com.example.advanced.trace.TraceStatus;
-import com.example.advanced.trace.hellotrace.HelloTraceV1;
+import com.example.advanced.trace.logtrace.LogTrace;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 @Repository
 @RequiredArgsConstructor
-public class OrderRepositoryV1 {
+public class OrderRepositoryV3 {
 
-    private final HelloTraceV1 trace;
+    private final LogTrace trace;
 
     public void save(String itemId) {
 
         TraceStatus status = null;
         try {
-            status = trace.begin("OrderRepositoryV1.save()");
+            status = trace.begin("OrderRepositoryV2.save()");
 
             //저장 로직
             if (itemId.equals("ex")){
@@ -38,4 +38,5 @@ public class OrderRepositoryV1 {
             e.printStackTrace();
         }
     }
+
 }
