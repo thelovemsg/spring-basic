@@ -1,8 +1,9 @@
-package com.example.advanced.trace.logtrace;
+package hello.pureproxy.proxy.pureproxy.proxy.trace.logtrace;
 
-import com.example.advanced.trace.TraceStatus;
+import hello.pureproxy.proxy.pureproxy.proxy.trace.TraceStatus;
 
 public interface LogTrace {
+
     TraceStatus begin(String message);
     void end(TraceStatus status);
     void exception(TraceStatus status, Exception e);
