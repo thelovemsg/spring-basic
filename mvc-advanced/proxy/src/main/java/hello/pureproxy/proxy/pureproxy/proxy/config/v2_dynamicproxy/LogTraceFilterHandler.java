@@ -1,4 +1,4 @@
-package hello.pureproxy.proxy.pureproxy.proxy.config.v2_dynamicproxy.handler;
+package hello.pureproxy.proxy.pureproxy.proxy.config.v2_dynamicproxy;
 
 import hello.pureproxy.proxy.pureproxy.proxy.trace.TraceStatus;
 import hello.pureproxy.proxy.pureproxy.proxy.trace.logtrace.LogTrace;
