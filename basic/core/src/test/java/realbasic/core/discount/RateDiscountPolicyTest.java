@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import realbasic.core.member.Grade;
 import realbasic.core.member.Member;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class RateDiscountPolicyTest {
 
     RateDiscountPolicy discountPolicy = new RateDiscountPolicy();
