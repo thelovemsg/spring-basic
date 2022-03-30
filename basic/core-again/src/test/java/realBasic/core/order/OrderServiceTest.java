@@ -1,16 +1,26 @@
 package realBasic.core.order;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import realBasic.core.AppConfig;
 import realBasic.core.member.Grade;
 import realBasic.core.member.Member;
 import realBasic.core.member.MemberService;
-import realBasic.core.member.MemberServiceImpl;
 
 class OrderServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+//    MemberService memberService = new MemberServiceImpl(new MemoryMemberRepository());
+//    OrderService orderService = new OrderServiceImpl(memberRepository, discountPolicy);
+    MemberService memberService;
+    OrderService orderService;
+
+    @BeforeEach
+    public void beforeEach(){
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+        orderService = appConfig.orderService();
+    }
 
     @Test
     void createOrder() {

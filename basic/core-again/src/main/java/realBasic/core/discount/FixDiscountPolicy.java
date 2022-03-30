@@ -3,6 +3,7 @@ package realBasic.core.discount;
 import realBasic.core.member.Grade;
 import realBasic.core.member.Member;
 
+
 public class FixDiscountPolicy implements DiscountPolicy {
 
     private int discountFixAmount = 1000;
