@@ -15,9 +15,5 @@ import realBasic.core.member.MemoryMemberRepository;
 )
 public class AutoAppConfig {
 
-    @Bean(name = "memoryMemberRepository")
-    MemberRepository memberRepository(){
-        return new MemoryMemberRepository();
-    }
 
 }

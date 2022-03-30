@@ -1,9 +1,10 @@
 package realBasic.core.discount;
 
+import org.springframework.stereotype.Component;
 import realBasic.core.member.Grade;
 import realBasic.core.member.Member;
 
-
+@Component
 public class FixDiscountPolicy implements DiscountPolicy {
 
     private int discountFixAmount = 1000;

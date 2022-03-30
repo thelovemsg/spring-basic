@@ -1,10 +1,12 @@
 package realBasic.core.discount;
 
 import org.springframework.stereotype.Component;
+import realBasic.core.MainDiscountPolicy;
 import realBasic.core.member.Grade;
 import realBasic.core.member.Member;
 
 @Component
+@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10;
