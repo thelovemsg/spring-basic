@@ -5,6 +5,9 @@ import hello.pureproxy.proxy.pureproxy.proxy.config.v1_proxy.InterfaceProxyConfi
 import hello.pureproxy.proxy.pureproxy.proxy.config.v2_dynamicproxy.handler.DynamicProxyBasicConfig;
 import hello.pureproxy.proxy.pureproxy.proxy.config.v3_configfoxtory.ProxyFactoryConfigV1;
 import hello.pureproxy.proxy.pureproxy.proxy.config.v3_configfoxtory.ProxyFactoryConfigV2;
+import hello.pureproxy.proxy.pureproxy.proxy.config.v4_postprocessor.BeanPostProcessorConfig;
+import hello.pureproxy.proxy.pureproxy.proxy.config.v5_autoproxy.AutoProxyConfig;
+import hello.pureproxy.proxy.pureproxy.proxy.config.v6_aop.AopConfig;
 import hello.pureproxy.proxy.pureproxy.proxy.trace.logtrace.LogTrace;
 import hello.pureproxy.proxy.pureproxy.proxy.trace.logtrace.ThreadLocalLogTrace;
 import org.springframework.boot.SpringApplication;
@@ -17,7 +20,9 @@ import org.springframework.context.annotation.Import;
 //@Import(ConcreteProxyConfig.class)
 //@Import(AppV2Config.class)
 //@Import(DynamicProxyBasicConfig.class)
-@Import(ProxyFactoryConfigV2.class)
+//@Import(ProxyFactoryConfigV2.class)
+//@Import(AutoProxyConfig.class)
+@Import(AopConfig.class)
 @SpringBootApplication(scanBasePackages = "hello.proxy.app") //주의
 public class ProxyApplication {
 

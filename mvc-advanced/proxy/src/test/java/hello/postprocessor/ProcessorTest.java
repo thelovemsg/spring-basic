@@ -14,7 +14,7 @@ public class ProcessorTest {
         ApplicationContext context = new AnnotationConfigApplicationContext();
 
         //A는 빈으로 등록된다.
-        context.getBean("beanA", BeanA.class);
+        BeanA beanA = context.getBean("beanA", BeanA.class);
     }
 
     @Slf4j
