@@ -1,12 +1,9 @@
 package aoptest.aop;
 
-import aoptest.aop.order.OrderRepository;
-import aoptest.aop.order.OrderService;
-import aoptest.aop.order.aop.*;
+import aoptest.aop.aoptest.*;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,33 +11,29 @@ import org.springframework.context.annotation.Import;
 
 @Slf4j
 @SpringBootTest
-//@Import({AspectV1.class, AspectV2.class})
-//@Import(AspectV3.class)
-//@Import(AspectV4Pointcut.class)
-//@Import({AspectV5Order.LogAspect.class, AspectV5Order.TxAspect.class})
-@Import(AspectV6Advice.class)
+@Import({AspectV5.LogAspect.class, AspectV5.TxAspect.class})
 public class AopTest {
 
     @Autowired
-    OrderService orderService;
+    private AopService aopService;
 
     @Autowired
-    OrderRepository orderRepository;
+    private AopRepository aopRepository;
 
     @Test
     void aopInfo() {
-        log.info("isAopProxy, orderService={}", AopUtils.isAopProxy(orderService));
-        log.info("isAopProxy, orderService={}", AopUtils.isAopProxy(orderRepository));
+        log.info("isAopProxy, aopService={}", AopUtils.isAopProxy(aopService));
+        log.info("isAopProxy, aopRepository={}", AopUtils.isAopProxy(aopRepository));
     }
 
     @Test
     void success() {
-        orderService.orderItem("itemA");
+        aopService.AopServiceTest("test1");
     }
 
     @Test
-    void exception() {
-        Assertions.assertThatThrownBy(() -> orderService.orderItem("ex"))
+    void  exception() {
+        Assertions.assertThatThrownBy(() -> aopService.AopServiceTest("exception"))
                 .isInstanceOf(IllegalStateException.class);
     }
 

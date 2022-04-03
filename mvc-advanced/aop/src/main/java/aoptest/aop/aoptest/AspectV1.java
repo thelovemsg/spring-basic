@@ -1,4 +1,4 @@
-package aoptest.aop.order.aop;
+package aoptest.aop.aoptest;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Aspect;
 @Aspect
 public class AspectV1 {
 
-    @Around("execution(* aoptest.aop.order..*(..))")
+    @Around("execution(* aoptest.aop.aoptest..*(..))")
     public Object loggingTest(ProceedingJoinPoint joinPoint) throws Throwable{
         log.info("[log] {}", joinPoint.getSignature()); // joint point 시그니처
         return joinPoint.proceed();
