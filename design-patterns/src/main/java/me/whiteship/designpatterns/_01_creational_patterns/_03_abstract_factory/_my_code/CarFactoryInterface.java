@@ -13,7 +13,6 @@ public interface CarFactoryInterface {
 
     Car makeCar();
 
-
     //private 선언시에는 interface에도 메소드 구현이 가능함.
     private void validate(String name, String address){
         if(name == null || name.isBlank()) {
