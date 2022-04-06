@@ -12,7 +12,11 @@ public class JavaCollectionExample {
         students.add(keesun);
         students.add(whiteship);
 
+        //엄밀히 말하면 prototype 패턴을 사용한 것은 아니다.
         List<Student> clone = new ArrayList<>(students);
+
+
+
         System.out.println(clone);
     }
 }

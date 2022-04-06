@@ -12,6 +12,8 @@ public class TourDirector {
         this.tourPlanBuilder = tourPlanBuilder;
     }
 
+    //여행상품을 판매하는 입장에서 이러한 일련의 과정이 너무 반복된다면
+    //미리 만들어 있는 세트를 미리 만들어놓고 재사용 가능하게도 할 수 있다.
     public TourPlan cancunTrip() {
         return tourPlanBuilder.title("칸쿤 여행")
                 .nightsAndDays(2, 3)
@@ -27,4 +29,5 @@ public class TourDirector {
                 .startDate(LocalDate.of(2021, 7, 15))
                 .getPlan();
     }
+
 }

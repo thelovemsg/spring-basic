@@ -13,6 +13,12 @@ public class App {
 
         String url = githubIssue.getUrl();
         System.out.println(url);
+
+//        GithubIssue githubIssue1 = githubIssue.clone();
+
+        //TODO githubIssue1 != githubIssue
+        //TODO githubIssue1.equals(githubIssue) => true
+
     }
 
 }
