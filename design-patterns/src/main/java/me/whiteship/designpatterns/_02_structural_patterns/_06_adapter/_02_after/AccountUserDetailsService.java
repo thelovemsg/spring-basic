@@ -13,6 +13,8 @@ public class AccountUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUser(String username) {
-        return new AccountUserDetails(accountService.findAccountByUsername(username));
+        Account accountByUsername = accountService.findAccountByUsername(username);
+        return new AccountUserDetails(accountByUsername);
+//        return new AccountUserDetails(accountService.findAccountByUsername(username));
     }
 }
