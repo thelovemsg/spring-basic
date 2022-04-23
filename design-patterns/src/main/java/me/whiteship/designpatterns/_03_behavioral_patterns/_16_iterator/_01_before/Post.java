@@ -28,4 +28,5 @@ public class Post {
     public void setCreatedDateTime(LocalDateTime createdDateTime) {
         this.createdDateTime = createdDateTime;
     }
+
 }

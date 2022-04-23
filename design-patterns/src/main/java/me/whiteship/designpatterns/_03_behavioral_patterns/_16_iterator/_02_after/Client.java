@@ -16,7 +16,9 @@ public class Client {
         // TODO 들어간 순서대로 순회하기
         List<Post> posts = board.getPosts();
         Iterator<Post> iterator = posts.iterator();
-        System.out.println(iterator.getClass());
+        while (iterator.hasNext()){
+            System.out.println(iterator.next().getTitle());
+        }
 
         for (int i = 0 ; i < posts.size() ; i++) {
             Post post = posts.get(i);

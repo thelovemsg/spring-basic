@@ -2,7 +2,6 @@ package me.whiteship.designpatterns._03_behavioral_patterns._16_iterator._01_bef
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class Board {
 
@@ -10,10 +9,6 @@ public class Board {
 
     public List<Post> getPosts() {
         return posts;
-    }
-
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
     }
 
     public void addPost(String content) {
