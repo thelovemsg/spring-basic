@@ -15,7 +15,7 @@ public class ConcreteObserver implements Observer{
     public ConcreteObserver(Subject subject) {
         this.subject = subject;
         this.observerID = ++observerIDTracker;
-        System.out.println("New Observer " + this.observerID);
+        System.out.println("\nNew Observer " + this.observerID);
         subject.add(this);
     }
 
@@ -28,7 +28,7 @@ public class ConcreteObserver implements Observer{
     }
 
     public void printThePrices() {
-        System.out.println(observerID + "\nIBM : " + ibmPrice
+        System.out.println("\n" + observerID + "\nIBM : " + ibmPrice
         + "\nAPPL : " + aaplPrice + "\nGOOD : " + googPrice);
     }
 

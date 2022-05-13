@@ -1,8 +1,5 @@
 package me.whiteship.designpatterns._03_behavioral_patterns._21_strategy._02_after;
 
-import java.util.Collections;
-import java.util.Comparator;
-
 public class Client {
 
     public static void main(String[] args) {

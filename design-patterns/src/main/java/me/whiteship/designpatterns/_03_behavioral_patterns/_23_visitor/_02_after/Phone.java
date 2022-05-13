@@ -10,7 +10,6 @@ public class Phone implements Device {
     @Override
     public void print(Rectangle rectangle) {
         System.out.println("Print Rectangle to Phone");
-
     }
 
     @Override
