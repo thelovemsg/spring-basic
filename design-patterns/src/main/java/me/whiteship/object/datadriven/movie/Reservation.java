@@ -1,5 +1,6 @@
 package me.whiteship.object.datadriven.movie;
 
+import me.whiteship.designpatterns._01_creational_patterns._02_factory_method._my_code.Customer;
 import me.whiteship.object.movie.Money;
 
 public class Reservation {

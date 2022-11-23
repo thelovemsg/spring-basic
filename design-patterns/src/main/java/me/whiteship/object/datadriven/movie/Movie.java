@@ -3,6 +3,7 @@ package me.whiteship.object.datadriven.movie;
 import me.whiteship.object.movie.DiscountCondition;
 import me.whiteship.object.movie.Money;
 
+import java.time.Duration;
 import java.util.List;
 
 public class Movie {

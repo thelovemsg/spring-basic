@@ -1,6 +1,7 @@
 package jpabook.start;
 
 import javax.persistence.*;  //**
+import java.util.Date;
 
 /**
  * User: HolyEyE
@@ -18,6 +19,15 @@ public class Member {
     private String username;
 
     private Integer age;
+
+    @Enumerated(EnumType.STRING)
+    private RoleType roleType;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastModifiedDate;
+
+    @Lob
+    private String description;
 
     public String getId() {
         return id;
@@ -42,4 +52,5 @@ public class Member {
     public void setAge(Integer age) {
         this.age = age;
     }
+
 }

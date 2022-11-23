@@ -3,12 +3,12 @@ package me.whiteship.designpatterns._02_structural_patterns._12_proxy._my_code_b
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class SecondProxy implements Subject{
+public class SecondProxyCache implements Subject{
 
     private Subject target;
     private String info;
 
-    public SecondProxy(Subject target) {
+    public SecondProxyCache(Subject target) {
         this.target = target;
     }
 

@@ -20,14 +20,13 @@ public abstract class Item {
     @Column(name = "ITEM_ID")
     private Long id;
 
-    private String name;        //이름
-    private int price;          //가격
-    private int stockQuantity;  //재고수량
+    private String name;
+    private int price;
+    private int stockQuantity;
 
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<Category>();
 
-    //Getter, Setter
     public Long getId() {
         return id;
     }
@@ -66,14 +65,5 @@ public abstract class Item {
 
     public void setCategories(List<Category> categories) {
         this.categories = categories;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                '}';
     }
 }

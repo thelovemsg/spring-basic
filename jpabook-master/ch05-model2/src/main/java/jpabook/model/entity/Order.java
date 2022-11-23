@@ -1,6 +1,7 @@
 package jpabook.model.entity;
 
 import javax.persistence.*;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,29 +13,27 @@ import java.util.List;
 @Table(name = "ORDERS")
 public class Order {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "ORDER_ID")
     private Long id;
 
     @ManyToOne
     @JoinColumn(name = "MEMBER_ID")
-    private Member member;      //주문 회원
+    private Member member; //주문 회원
 
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<OrderItem>();
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Date orderDate;     //주문시간
+    private Date orderDate;
 
     @Enumerated(EnumType.STRING)
-    private OrderStatus status;//주문상태
+    private OrderStatus status; //주문상태
 
-    //==연관관계 메서드==//
-    public void setMember(Member member) {
-        //기존 관계 제거
-        if (this.member != null) {
+    public void setMember (Member member) {
+        if(this.member != null)
             this.member.getOrders().remove(this);
-        }
         this.member = member;
         member.getOrders().add(this);
     }

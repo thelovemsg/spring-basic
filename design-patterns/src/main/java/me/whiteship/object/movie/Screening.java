@@ -1,5 +1,7 @@
 package me.whiteship.object.movie;
 
+import me.whiteship.designpatterns._01_creational_patterns._02_factory_method._my_code.Customer;
+
 import java.time.LocalDateTime;
 
 public class Screening {
