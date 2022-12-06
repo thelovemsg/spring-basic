@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @RestController
@@ -38,7 +39,6 @@ public class OrderController {
         OrderDto createdOrder = orderService.createOrder(orderDto);
 
         ResponseOrder responseOrder = mapper.map(createdOrder, ResponseOrder.class);
-
         return ResponseEntity.status(HttpStatus.CREATED).body(responseOrder);
     }
 
