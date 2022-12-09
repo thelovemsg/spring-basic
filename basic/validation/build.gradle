@@ -13,8 +13,8 @@ configurations {
 		extendsFrom annotationProcessor
 	}
 }
-
 repositories {
+	jcenter()
 	mavenCentral()
 }
 
