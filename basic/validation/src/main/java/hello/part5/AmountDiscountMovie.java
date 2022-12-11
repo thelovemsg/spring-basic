@@ -2,7 +2,7 @@ package hello.part5;
 
 import java.time.Duration;
 
-public class AmountDiscountMovie extends Movie{
+public class AmountDiscountMovie extends Movie_Data {
 
     private Money discountAmount;
 

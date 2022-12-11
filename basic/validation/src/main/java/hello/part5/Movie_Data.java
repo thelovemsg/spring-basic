@@ -1,7 +1,5 @@
 package hello.part5;
 
-import hello.part4.MovieType;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -18,15 +16,16 @@ import java.util.List;
  *
  *
  */
-public abstract class Movie {
+public abstract class Movie_Data {
 
     private String title;
     private Duration runningTime;
     private Money fee;
+    private DiscountPolicy discountPolicy;
 
     private List<DiscountCondition> discountConditions;
 
-    public Movie(String title, Duration runningTime, Money fee, DiscountCondition... discountConditions) {
+    public Movie_Data(String title, Duration runningTime, Money fee, DiscountCondition... discountConditions) {
         this.title = title;
         this.runningTime = runningTime;
         this.fee = fee;
@@ -40,9 +39,21 @@ public abstract class Movie {
         return fee;
     }
 
-    public abstract Money calculateDiscountAmount();
+    abstract protected Money calculateDiscountAmount();
 
     private boolean isDiscountable(Screening screening) {
         return discountConditions.stream().anyMatch(condition -> condition.isSatisfiedBy(screening));
+    }
+
+    public Money getFee() {
+        return fee;
+    }
+
+    public List<DiscountCondition> getDiscountConditions() {
+        return discountConditions;
+    }
+
+    public void changeDiscountPolicy(DiscountPolicy discountPolicy){
+        this.discountPolicy = discountPolicy;
     }
 }
