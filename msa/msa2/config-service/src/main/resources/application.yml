@@ -8,4 +8,5 @@ spring:
     config:
       server:
         git:
-          uri: file:///D:/IntelliJ_ IDEA/inflearn/basic/msa/msa2/git-local-repo
+          uri: https://github.com/thelovemsg/spring-basic
+          search-paths: msa/msa2/git-local-repo/**
