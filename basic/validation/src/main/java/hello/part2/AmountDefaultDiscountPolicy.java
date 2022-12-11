@@ -1,9 +1,9 @@
 package hello.part2;
 
-public class AmountDiscountPolicy extends DiscountPolicy{
+public class AmountDefaultDiscountPolicy extends DefaultDiscountPolicy {
     private Money discountAmount;
 
-    public AmountDiscountPolicy(Money discountAmount, DiscountCondition... conditions) {
+    public AmountDefaultDiscountPolicy(Money discountAmount, DiscountCondition... conditions) {
         super(conditions);
         this.discountAmount = discountAmount;
     }
