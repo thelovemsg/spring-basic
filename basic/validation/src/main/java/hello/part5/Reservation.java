@@ -1,4 +1,4 @@
-package hello.part2;
+package hello.part5;
 
 import hello.part4.Customer;
 

@@ -1,4 +1,4 @@
-package hello.part2;
+package hello.part5;
 
 import hello.part4.Customer;
 
@@ -25,8 +25,12 @@ public class Screening {
         return this.sequence == sequence;
     }
 
-    public Money getMovieFee() {
-        return movie.getFee();
+    public LocalDateTime getWhenScreened() {
+        return whenScreened;
+    }
+
+    public int getSequence() {
+        return sequence;
     }
 
     public Reservation reserve(Customer customer, int audienceCount) {

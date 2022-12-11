@@ -1,0 +1,60 @@
+package hello.part4;
+
+import hello.part2.Money;
+
+import java.time.LocalDateTime;
+
+public class Screening_Data {
+    private Movie_Data movie;
+    private int sequence;
+    private LocalDateTime whenScreened;
+
+    public Screening_Data(Movie_Data movie, int sequence, LocalDateTime whenScreened) {
+        this.movie = movie;
+        this.sequence = sequence;
+        this.whenScreened = whenScreened;
+    }
+
+    public Money calculateFee(int audienceCount) {
+        switch (movie.getMovieType()) {
+            case AMOUNT_DISCOUNT:
+                if (movie.isDiscountable(whenScreened, sequence)){
+                    return movie.calculateAmountDiscountFee().times(audienceCount);
+                }
+                break;
+            case PERCENT_DISCOUNT:
+                if (movie.isDiscountable(whenScreened, sequence)){
+                    return movie.calculatePercentDiscountedFee().times(audienceCount);
+                }
+                break;
+            case NONE_DISCOUNT:
+                return movie.calculateNoneDiscountedFee().times(audienceCount);
+        }
+
+        return movie.calculateNoneDiscountedFee().times(audienceCount);
+    }
+
+    public Movie_Data getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie_Data movie) {
+        this.movie = movie;
+    }
+
+    public int getSequence() {
+        return sequence;
+    }
+
+    public void setSequence(int sequence) {
+        this.sequence = sequence;
+    }
+
+    public LocalDateTime getWhenScreened() {
+        return whenScreened;
+    }
+
+    public void setWhenScreened(LocalDateTime whenScreened) {
+        this.whenScreened = whenScreened;
+    }
+}
