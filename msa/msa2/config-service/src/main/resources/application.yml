@@ -9,4 +9,4 @@ spring:
       server:
         git:
           uri: https://github.com/thelovemsg/spring-basic
-          search-paths: msa/msa2/git-local-repo/**
+          search-paths: git-local-repo
