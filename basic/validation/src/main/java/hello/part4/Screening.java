@@ -40,10 +40,12 @@ public class Screening {
     }
 
     public hello.part5.Reservation reserve(Customer customer, int audienceCount) {
-        return new Reservation(customer, this, calculateFee(audienceCount), audienceCount);
+        //return new Reservation(customer, this, calculateFee(audienceCount), audienceCount);
+        return null;
     }
 
     private Money calculateFee(int audienceCount) {
-        return movie.calculateMovieFee(this).times(audienceCount);
+         //movie.calculateMovieFee(this).times(audienceCount);
+        return null;
     }
 }
