@@ -8,11 +8,9 @@ public class Song {
         this.singer = singer;
         this.title = title;
     }
-
     public String getSinger() {
         return singer;
     }
-
     public String getTitle() {
         return title;
     }

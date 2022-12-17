@@ -1,4 +1,4 @@
-package hello.part10.phone_improve_with_abtract;
+package hello.part11.extend;
 
 import hello.part5.Money;
 
@@ -11,18 +11,17 @@ import java.util.List;
  * 공통 코드를 이동시킨 후에 각 클래스는 서로 다른 변경의 이유를 가진다.
  * 
  */
-public class NightlyDiscountPhone extends Phone {
+public class TaxableNightlyDiscountPhone extends NightlyDiscountPhone {
     private static final int LATE_NIGHT_HOUR = 22;
     private Money nightlyAmount;
     private Money regularAmount;
     private Duration seconds;
+    private double taxRate;
     private List<Call> calls = new ArrayList<>();
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds, double taxRate) {
-        super(taxRate);
-        this.nightlyAmount = nightlyAmount;
-        this.regularAmount = regularAmount;
-        this.seconds = seconds;
+    public TaxableNightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds, double taxRate) {
+        super(nightlyAmount, regularAmount, seconds);
+        this.taxRate = taxRate;
     }
 
     public Money calculateFee() {
@@ -34,12 +33,17 @@ public class NightlyDiscountPhone extends Phone {
 
         return result;
     }
+
     @Override
     protected Money calculateCallFee(Call call) {
         if(call.getFrom().getHour() >= LATE_NIGHT_HOUR){
             return nightlyAmount.times(call.getDuration().getSeconds() / seconds.getSeconds());
         }
         return regularAmount.times(call.getDuration().getSeconds() / seconds.getSeconds());
+    }
+    @Override
+    protected Money afterCalculated(Money fee) {
+        return fee.plus(fee.times(taxRate));
     }
 
 }

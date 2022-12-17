@@ -1,4 +1,4 @@
-package hello.part10.phone_improve_with_abtract;
+package hello.part11.extend;
 
 import hello.part5.Money;
 
@@ -18,8 +18,7 @@ public class NightlyDiscountPhone extends Phone {
     private Duration seconds;
     private List<Call> calls = new ArrayList<>();
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds, double taxRate) {
-        super(taxRate);
+    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds) {
         this.nightlyAmount = nightlyAmount;
         this.regularAmount = regularAmount;
         this.seconds = seconds;
@@ -34,12 +33,18 @@ public class NightlyDiscountPhone extends Phone {
 
         return result;
     }
+
     @Override
     protected Money calculateCallFee(Call call) {
         if(call.getFrom().getHour() >= LATE_NIGHT_HOUR){
             return nightlyAmount.times(call.getDuration().getSeconds() / seconds.getSeconds());
         }
         return regularAmount.times(call.getDuration().getSeconds() / seconds.getSeconds());
+    }
+
+    @Override
+    protected Money afterCalculated(Money fee) {
+        return fee;
     }
 
 }
