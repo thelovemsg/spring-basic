@@ -8,7 +8,7 @@ public class GradeLecture extends Lecture{
     private List<Grade> grades;
 
     public GradeLecture(int pass, String title, List<Integer> scores, List<Grade> grades) {
-        super(pass, title, scores);
+        super(pass, title, scores); // super 전송
         this.grades = grades;
     }
 
