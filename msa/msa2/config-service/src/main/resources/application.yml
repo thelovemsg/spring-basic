@@ -4,9 +4,13 @@ server:
 spring:
   application:
     name: config-service
+#  profiles:
+#    active: native
   cloud:
     config:
       server:
+#        native:
+#          search-locations: files://${user.home}/Desk
         git:
           uri: https://github.com/thelovemsg/spring-basic
           search-paths: git-local-repo
