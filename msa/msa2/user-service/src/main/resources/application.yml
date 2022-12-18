@@ -1,9 +1,9 @@
 server:
   port: 0
-logging:
-  level:
-    com.example.userservice: DEBUG
 spring:
+  config:
+    import:
+      - classpath:/bootstrap.yml
   application:
     name: user-service
   h2:
@@ -32,12 +32,22 @@ eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
-    servier-url:
+    service-url:
       defaultZone: http://127.0.0.1:8761/eureka
 
 greeting:
   message: Welcome to the Simple E-commerce.
 
-token:
-  expiration_time: 86400000
-  secret: user_token
+logging:
+  level:
+    com.example.userservice: DEBUG
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include: refresh, health, beans
+
+#token:
+#  expiration_time: 86400000
+#  secret: user_token
