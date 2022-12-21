@@ -4,13 +4,24 @@ server:
 spring:
   application:
     name: config-service
-#  profiles:
-#    active: native
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  profiles:
+    active: native
   cloud:
     config:
       server:
-#        native:
-#          search-locations: files://${user.home}/Desk
+        native:
+          search-locations: file:D:/config/native-file-repo
         git:
           uri: https://github.com/thelovemsg/spring-basic
           search-paths: git-local-repo
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh
