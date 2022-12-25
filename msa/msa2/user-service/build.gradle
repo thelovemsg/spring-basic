@@ -38,6 +38,7 @@ dependencies {
 //	implementation 'org.hibernate:hibernate-validator:5.1.2.Final'
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
 	// https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	implementation 'org.modelmapper:modelmapper:3.1.0'
 
 	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config

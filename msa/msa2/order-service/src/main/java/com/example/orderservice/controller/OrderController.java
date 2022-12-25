@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 @RestController
@@ -26,7 +25,7 @@ public class OrderController {
 
     @GetMapping("/health_check")
     public String status() {
-        return String.format("It's Working in OrdSer ervice on Port %s", env.getProperty("local.server.port"));
+        return String.format("It's Working in OrderService on Port %s", env.getProperty("local.server.port"));
     }
 
     @PostMapping("/{userId}/orders")
@@ -43,8 +42,7 @@ public class OrderController {
     }
 
     @GetMapping("/{userId}/orders")
-    public ResponseEntity<List<ResponseOrder>> getOrder(@PathVariable("userId") String userId, @RequestBody RequestOrder orderDetails) {
-
+    public ResponseEntity<List<ResponseOrder>> getOrder(@PathVariable("userId") String userId) {
         Iterable<OrderEntity> orderList = orderService.getOrderByUserId(userId);
         List<ResponseOrder> result = new ArrayList<>();
         orderList.forEach(v -> result.add(new ModelMapper().map(v, ResponseOrder.class)));
