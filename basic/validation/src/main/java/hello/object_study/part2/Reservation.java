@@ -1,6 +1,6 @@
-package hello.part2;
+package hello.object_study.part2;
 
-import hello.part4.Customer;
+import hello.object_study.part4.Customer;
 
 public class Reservation {
     private Customer customer;
