@@ -1,0 +1,9 @@
+<context-param>
+    <param-name>contextConfigurationLocation</param-name>
+    <param-value>
+        classPath:daoContext.xml
+        classPath:applicationContext.xml
+<!--        /WEB-INF/*Context.xml    => WEB-INF 밑의 Context.xml로 끝나는 모든 파일을 지정 -->
+<!--        /WEB-INF/**/*Context.xml => WEB-INF 밑의 모든 서브폴더에서 Context.xml로 끝나는 파일을 찾음 -->
+    </param-value>
+</context-param>
