@@ -24,6 +24,45 @@ public class Parity {
 
         short i2 = apply1(10);
         System.out.println("i2 = " + i2);
+
+        System.out.println(2^1);
+        System.out.println(2^2);
+        System.out.println(2^3);
+        short i3 = apply2(10, 1);
+        System.out.println("i3 = " + i3);
+
+        short i4 = apply2(10, 2);
+        System.out.println("i4 = " + i4);
+
+        short i5 = apply2(10, 4);
+        System.out.println("i5 = " + i5);
+
+        short i6 = apply2(10, 8);
+        System.out.println("i6 = " + i5);
+    }
+
+    /**
+     * <PRE>
+     * x mod '2의 거듭제곱을 계산하라.
+     * 예를 들어, 77 mod 64는 13을 반환한다.
+     * </PRE>
+     * @param i - 나누고자 하는 숫자 입력
+     * @param mod - 2의 거듭 제곱 입력
+     * @return
+     */
+    private static short apply2(int i, int mod) {
+        return (short)(i & (mod - 1));
+    }
+
+    /**
+     * <PRE>
+     * x가 2의 거듭제곱인지 판단.
+     * </PRE>
+     * @param i
+     * @return
+     */
+    private static boolean apply3(int i) {
+        return (short)(i & (i - 1)) == 0;
     }
 
     /**
@@ -65,7 +104,9 @@ public class Parity {
 
     }
 
-    //brute force
+    // brute force
+    // x에서 가장 오른쪽에 설정된 비트를 오른쪽으로 전달하라.
+    // ex : 01010000 => 01011111
     public static short apply1(long x){
         short origin = (short) x;
         short result = 0;
