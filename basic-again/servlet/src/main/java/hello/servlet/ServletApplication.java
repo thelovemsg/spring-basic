@@ -1,5 +1,5 @@
 package hello.servlet;
-
+//	ViewRe
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -15,8 +15,7 @@ public class ServletApplication {
 		SpringApplication.run(ServletApplication.class, args);
 	}
 
-	@Bean
-	ViewResolver internalResourceViewResolver() {
-		return new InternalResourceViewResolver("/WEB-INF/views/", ".jsp");
-	}
+//	@Besolver internalResourceViewResolver() {
+//		return new InternalResourceViewResolver("/WEB-INF/views/", ".jsp");
+//	}
 }
